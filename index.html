@@ -5,7 +5,301 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Discover why fatigue, cravings, and belly fat after 45 have nothing to do with willpower — and the simple metabolic shift that changes everything." />
   <title>It's NOT Willpower. It's Metabolic.</title>
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 19px;
+      line-height: 1.8;
+      color: #222;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .disclosure {
+      background: #f5f5f5;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      padding: 8px 16px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 48px 24px 64px;
+      }
+    }
+
+    .header {
+      margin-bottom: 28px;
+    }
+
+    .header h1 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 26px;
+      line-height: 1.35;
+      font-weight: 700;
+      color: #1a1a1a;
+      text-align: left;
+    }
+
+    .header h1 em {
+      font-style: italic;
+      color: #1a1a1a;
+    }
+
+    .header h1 strong {
+      color: #b22222;
+    }
+
+    @media (min-width: 768px) {
+      .header h1 {
+        font-size: 32px;
+        line-height: 1.3;
+      }
+    }
+
+    .hero-image {
+      margin: 0 0 16px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .image-caption {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+      text-align: center;
+      margin-bottom: 32px;
+      padding: 0 8px;
+    }
+
+    .cta-wrap {
+      text-align: center;
+      margin: 32px 0;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #b22222;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 18px 32px;
+      border-radius: 6px;
+      letter-spacing: 0.02em;
+      transition: background 0.2s ease, transform 0.15s ease;
+      box-shadow: 0 4px 14px rgba(178, 34, 34, 0.25);
+    }
+
+    .cta-button:hover {
+      background: #8b0000;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(178, 34, 34, 0.35);
+    }
+
+    .cta-button:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 480px) {
+      .cta-button {
+        display: block;
+        font-size: 16px;
+        padding: 16px 20px;
+      }
+    }
+
+    .story-section {
+      margin-bottom: 40px;
+    }
+
+    .story-section p {
+      margin-bottom: 20px;
+    }
+
+    .inline-quote {
+      font-style: italic;
+      font-size: 21px;
+      color: #444;
+      text-align: center;
+      padding: 12px 20px;
+      margin: 24px 0;
+      border-left: 3px solid #b22222;
+      background: #fdfafa;
+    }
+
+    @media (min-width: 768px) {
+      .inline-quote {
+        margin-left: 24px;
+        margin-right: 24px;
+      }
+    }
+
+    .mechanism-section {
+      margin-bottom: 40px;
+    }
+
+    .mechanism-section h2 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 23px;
+      line-height: 1.35;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+
+    .mechanism-section p {
+      margin-bottom: 20px;
+    }
+
+    .curiosity-section {
+      margin-bottom: 40px;
+    }
+
+    .curiosity-section h2 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 23px;
+      line-height: 1.35;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+
+    .curiosity-section p {
+      margin-bottom: 20px;
+    }
+
+    .curiosity-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 28px;
+    }
+
+    .curiosity-list li {
+      position: relative;
+      padding: 14px 16px 14px 40px;
+      margin-bottom: 12px;
+      background: #fffaf8;
+      border: 1px solid #f0e6e0;
+      border-radius: 4px;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .curiosity-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      color: #b22222;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .final-cta-section {
+      text-align: center;
+      padding: 32px 0 16px;
+      border-top: 1px solid #eee;
+    }
+
+    .final-cta-text {
+      font-size: 19px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .cta-subtext {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: #888;
+      margin-top: 12px;
+    }
+
+    .compliance-footer {
+      background: #f9f9f9;
+      border-top: 1px solid #e8e8e8;
+      padding: 32px 20px;
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 1.7;
+      color: #777;
+    }
+
+    .footer-inner p {
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      padding-top: 12px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer-links a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .copyright {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #aaa;
+    }
+
+    strong {
+      font-weight: 700;
+      color: #111;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -24,20 +318,17 @@
 
     <!-- 2. HERO IMAGE SECTION -->
     <figure class="hero-image">
-      <div class="image-placeholder">
-        <!-- Replace this div with your <img> tag -->
-        <span>[ Your Image Here ]</span>
-      </div>
+      <img src="hero.png" alt="Simple metabolic health discovery for adults over 45" />
     </figure>
 
     <!-- 3. ITALIC TEXT UNDER IMAGE -->
     <p class="image-caption">
-      <em>"I thought I was broken. Turns out, my body was just stuck in a metabolic loop nobody told me about."</em>
+      <em>&ldquo;I thought I was broken. Turns out, my body was just stuck in a metabolic loop nobody told me about.&rdquo;</em>
     </p>
 
     <!-- 4. FIRST CTA BUTTON -->
     <div class="cta-wrap">
-      <a href="#" class="cta-button" id="cta-top">
+      <a href="https://mwebtova.com/12118/319/3/?" class="cta-button" id="cta-top">
         WATCH THE FREE PRESENTATION NOW &raquo;
       </a>
     </div>
@@ -46,15 +337,15 @@
     <section class="story-section">
 
       <p>
-        Diane was <strong>53 years old</strong> when she finally broke down in her car after a doctor's appointment.
+        Diane was <strong>53 years old</strong> when she finally broke down in her car after a doctor&rsquo;s appointment.
       </p>
 
       <p>
-        Not because of bad news. But because the doctor said the same thing she'd heard a dozen times before:
+        Not because of bad news. But because the doctor said the same thing she&rsquo;d heard a dozen times before:
       </p>
 
       <p class="inline-quote">
-        "Just eat less and move more."
+        &ldquo;Just eat less and move more.&rdquo;
       </p>
 
       <p>
@@ -62,7 +353,7 @@
       </p>
 
       <p>
-        She'd been eating less. She'd been walking every morning. She'd cut carbs, tried keto, counted every calorie. She even did a 10-day juice cleanse that left her so dizzy she nearly fainted at work.
+        She&rsquo;d been eating less. She&rsquo;d been walking every morning. She&rsquo;d cut carbs, tried keto, counted every calorie. She even did a 10-day juice cleanse that left her so dizzy she nearly fainted at work.
       </p>
 
       <p>
@@ -70,11 +361,11 @@
       </p>
 
       <p>
-        Every morning she woke up exhausted. By 2pm the <strong>brain fog</strong> was so thick she couldn't finish a sentence. By evening, the <strong>cravings</strong> hit like a tidal wave — and no amount of "discipline" could stop them.
+        Every morning she woke up exhausted. By 2pm the <strong>brain fog</strong> was so thick she couldn&rsquo;t finish a sentence. By evening, the <strong>cravings</strong> hit like a tidal wave &mdash; and no amount of &ldquo;discipline&rdquo; could stop them.
       </p>
 
       <p>
-        The worst part? That stubborn ring of <strong>belly fat</strong> that wouldn't budge no matter what she did. Like her body was working <em>against</em> her.
+        The worst part? That stubborn ring of <strong>belly fat</strong> that wouldn&rsquo;t budge no matter what she did. Like her body was working <em>against</em> her.
       </p>
 
       <p>
@@ -82,15 +373,15 @@
       </p>
 
       <p>
-        If you're over 45 and struggling with fatigue, uncontrollable cravings, brain fog, or weight that refuses to move…
+        If you&rsquo;re over 45 and struggling with fatigue, uncontrollable cravings, brain fog, or weight that refuses to move&hellip;
       </p>
 
       <p>
-        <strong>It's not your fault. And it's not about willpower.</strong>
+        <strong>It&rsquo;s not your fault. And it&rsquo;s not about willpower.</strong>
       </p>
 
       <p>
-        What Diane didn't know — what most people never learn — is that after a certain age, your metabolism quietly shifts into a pattern that makes fat loss nearly <em>impossible</em> using conventional methods.
+        What Diane didn&rsquo;t know &mdash; what most people never learn &mdash; is that after a certain age, your metabolism quietly shifts into a pattern that makes fat loss nearly <em>impossible</em> using conventional methods.
       </p>
 
     </section>
@@ -98,34 +389,34 @@
     <!-- 6. MECHANISM REVEAL -->
     <section class="mechanism-section">
 
-      <h2>Here's What's <em>Actually</em> Happening Inside Your Body</h2>
+      <h2>Here&rsquo;s What&rsquo;s <em>Actually</em> Happening Inside Your Body</h2>
 
       <p>
-        A retired endocrinologist — someone who spent 30+ years studying how the body processes energy — explained it like this:
+        A retired endocrinologist &mdash; someone who spent 30+ years studying how the body processes energy &mdash; explained it like this:
       </p>
 
       <p>
-        After 40, your cells gradually become <strong>"deaf"</strong> to the signals that tell them to burn fuel properly.
+        After 40, your cells gradually become <strong>&ldquo;deaf&rdquo;</strong> to the signals that tell them to burn fuel properly.
       </p>
 
       <p>
-        Sugar from your food floats around your bloodstream with nowhere to go. Your body panics and stores it as fat — especially around the belly. Meanwhile, your cells are <em>starving</em> for energy they can't access.
+        Sugar from your food floats around your bloodstream with nowhere to go. Your body panics and stores it as fat &mdash; especially around the belly. Meanwhile, your cells are <em>starving</em> for energy they can&rsquo;t access.
       </p>
 
       <p>
-        That's why you feel exhausted even after sleeping 8 hours.
+        That&rsquo;s why you feel exhausted even after sleeping 8 hours.
       </p>
 
       <p>
-        That's why the cravings feel <em>physical</em> — because they are.
+        That&rsquo;s why the cravings feel <em>physical</em> &mdash; because they are.
       </p>
 
       <p>
-        That's why the brain fog won't lift no matter how much coffee you drink.
+        That&rsquo;s why the brain fog won&rsquo;t lift no matter how much coffee you drink.
       </p>
 
       <p>
-        <strong>Your body isn't broken. It's stuck in a metabolic loop.</strong>
+        <strong>Your body isn&rsquo;t broken. It&rsquo;s stuck in a metabolic loop.</strong>
       </p>
 
       <p>
@@ -133,11 +424,11 @@
       </p>
 
       <p>
-        But here's the good news…
+        But here&rsquo;s the good news&hellip;
       </p>
 
       <p>
-        Once you understand <em>why</em> it's happening, the fix is surprisingly simple. And it has nothing to do with extreme diets, exhausting workouts, or expensive prescriptions.
+        Once you understand <em>why</em> it&rsquo;s happening, the fix is surprisingly simple. And it has nothing to do with extreme diets, exhausting workouts, or expensive prescriptions.
       </p>
 
     </section>
@@ -145,11 +436,11 @@
     <!-- 7. CURIOSITY BULLET SECTION -->
     <section class="curiosity-section">
 
-      <h2>What You'll Discover in This Free Presentation:</h2>
+      <h2>What You&rsquo;ll Discover in This Free Presentation:</h2>
 
       <ul class="curiosity-list">
         <li>
-          The <strong>60-second breakfast trick</strong> that helps "wake up" sluggish metabolism before your first cup of coffee
+          The <strong>60-second breakfast trick</strong> that helps &ldquo;wake up&rdquo; sluggish metabolism before your first cup of coffee
         </li>
         <li>
           Why eating the <strong>RIGHT foods at the WRONG time</strong> can actually make fatigue and cravings <em>worse</em> (and the simple fix)
@@ -158,10 +449,10 @@
           A <strong>small after-dinner habit</strong> that supports healthy blood sugar levels while you sleep
         </li>
         <li>
-          The <strong>simple secrets</strong> a retired doctor shared with his own family — that most physicians never mention to patients
+          The <strong>simple secrets</strong> a retired doctor shared with his own family &mdash; that most physicians never mention to patients
         </li>
         <li>
-          Why everything you've been told about "eating less" after 45 is keeping you trapped in the same exhausting cycle
+          Why everything you&rsquo;ve been told about &ldquo;eating less&rdquo; after 45 is keeping you trapped in the same exhausting cycle
         </li>
       </ul>
 
@@ -170,7 +461,7 @@
       </p>
 
       <p>
-        <strong>This is not a magic pill. It's not a gimmick.</strong> It's a plain-English explanation of what's happening in your body — and a clear path forward.
+        <strong>This is not a magic pill. It&rsquo;s not a gimmick.</strong> It&rsquo;s a plain-English explanation of what&rsquo;s happening in your body &mdash; and a clear path forward.
       </p>
 
     </section>
@@ -179,7 +470,7 @@
     <section class="final-cta-section">
 
       <p class="final-cta-text">
-        If you're tired of feeling tired… if you're done blaming yourself for something that was <em>never</em> about willpower…
+        If you&rsquo;re tired of feeling tired&hellip; if you&rsquo;re done blaming yourself for something that was <em>never</em> about willpower&hellip;
       </p>
 
       <p class="final-cta-text">
@@ -187,7 +478,7 @@
       </p>
 
       <div class="cta-wrap">
-        <a href="#" class="cta-button" id="cta-bottom">
+        <a href="https://mwebtova.com/12118/319/3/?" class="cta-button" id="cta-bottom">
           REVEAL THE SIMPLE SECRETS &raquo;
         </a>
       </div>
@@ -215,6 +506,18 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var ctaButtons = document.querySelectorAll('.cta-button');
+      ctaButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          // Analytics hook: fire pixel/event here
+          // if (window.fbq) fbq('track', 'Lead');
+          // if (window.gtag) gtag('event', 'cta_click', { location: btn.id });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
